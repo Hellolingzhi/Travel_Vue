@@ -4,13 +4,13 @@
       热销推荐
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of recommend" :key="item.id">
         <div class="item-img-wrapper">
-          <img :src="item.imgURL" class="item-img">
+          <img :src="item.imgUrl" class="item-img">
         </div>
         <div class="item-info">
-          <p class="item-title">{{item.itemTitle}}</p>
-          <p class="item-desc">{{item.itemDesc}}</p>
+          <p class="item-title">{{item.title}}</p>
+          <p class="item-desc">{{item.desc}}</p>
           <a href="javascript:;" class="item-button">查看详情</a>
         </div>
       </li>
@@ -21,27 +21,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgURL: 'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3133d16-a13f-4fc3-b774-0e3d45f00cc7.jpg_r_480x320x90_4b7592ea.jpg',
-        itemTitle: '南京-北京 5天跟团游',
-        itemDesc: '特惠专线|北京纯玩5日游丨可升级酒店+经典景点全含+早定赠天津一日游'
-      },
-      {
-        id: '0002',
-        imgURL: 'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3133d16-a13f-4fc3-b774-0e3d45f00cc7.jpg_r_480x320x90_4b7592ea.jpg',
-        itemTitle: '南京-北京 5天跟团游',
-        itemDesc: '特惠专线|北京纯玩5日游丨可升级酒店+经典景点全含+早定赠天津一日游'
-      },
-      {
-        id: '0003',
-        imgURL: 'https://imgs.qunarzz.com/vs_ceph_vs_tts/a3133d16-a13f-4fc3-b774-0e3d45f00cc7.jpg_r_480x320x90_4b7592ea.jpg',
-        itemTitle: '南京-北京 5天跟团游',
-        itemDesc: '特惠专线|北京纯玩5日游丨可升级酒店+经典景点全含+早定赠天津一日游'
-      }]
-    }
+  props: {
+    recommend: Array
   }
 }
 </script>
