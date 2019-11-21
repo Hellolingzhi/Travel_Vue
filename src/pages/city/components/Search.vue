@@ -18,6 +18,7 @@
           v-for="item in list"
           class="search-item border-bottom"
           :key="item.id"
+          @click="handleCityClick(item.name)"
         >
           {{item.name}}
         </li>
@@ -33,6 +34,12 @@ export default {
   name: 'CitySearch',
   props: {
     cities: Object
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
+    }
   },
   data () {
     return {
