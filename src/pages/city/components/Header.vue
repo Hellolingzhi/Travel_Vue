@@ -17,8 +17,8 @@ export default {
 @import '~styles/varible.styl'
 .header
   position: relative
-  height: .86rem
-  line-height: .86rem
+  height: $headerHeight
+  line-height: $headerHeight
   text-align: center
   font-size: .32rem
   color: #fff
