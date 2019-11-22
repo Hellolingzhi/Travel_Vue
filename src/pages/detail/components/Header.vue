@@ -26,6 +26,7 @@ export default {
   },
   methods: {
     handleScroll () {
+      console.log('scroll')
       const top = document.documentElement.scrollTop
       if (top > 60) {
         this.showAbs = false
@@ -34,8 +35,13 @@ export default {
       }
     }
   },
-  mounted () {
+  activated () {
+    console.log(1)
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    console.log(2)
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
