@@ -2,14 +2,17 @@
   <div>
     <transition>
       <router-link
-        tag="div" to="/"
+        tag="div"
+        to="/"
         class="header-abs"
         v-if="showAbs"
       >
         <span class="iconfont">&#xe6db;</span>
       </router-link>
       <div class="header-fixed" v-else>
-        <span class="iconfont">&#xe6db;</span>
+        <router-link to='/'>
+          <span class="iconfont">&#xe6db;</span>
+        </router-link>
         景点详情
       </div>
     </transition>
@@ -50,11 +53,12 @@ export default {
 @import '~styles/varible.styl'
 .header-abs
   position: fixed
-  left: .2rem
-  top: .2rem
-  width: .8rem
-  height: .8rem
-  line-height: .8rem
+  z-index: 999
+  left: .25rem
+  top: .1rem
+  width: .7rem
+  height: .7rem
+  line-height: .7rem
   background-color: #000
   border-radius: 50%
   .iconfont
@@ -64,6 +68,7 @@ export default {
     text-align: center
 .header-fixed
   position: fixed
+  z-index: 999
   top: 0
   left: 0
   right: 0
